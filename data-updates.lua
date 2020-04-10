@@ -1,0 +1,1 @@
+require("prototypes.intergalactic-transceiver-updates")
