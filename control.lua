@@ -129,6 +129,8 @@ script.on_event(defines.events.on_tick,function(event)
     if game.tick % 20 ~= 0 then return end
 
     for index, struct in pairs(global.kee_intergalactic_transceivers) do
+        local transceiver_replaced = false
+
         if struct.entity and struct.entity.valid and struct.state == 'loading' then
             -- Take resources from the internal buffer and update the loading-process:
             local main_inv = struct.entity.get_inventory(defines.inventory.chest)
@@ -191,9 +193,8 @@ script.on_event(defines.events.on_tick,function(event)
 
                     -- Remove old entity:
                     global.kee_intergalactic_transceivers[struct.entity.unit_number] = nil
-                    --struct.combinator.destroy()
-                    --struct.combinator = nil
                     struct.entity.destroy()
+                    transceiver_replaced = true
                     -- Store new entity in our struct:
                     struct.entity = firing_entity
                     struct.state = 'firing'
@@ -212,6 +213,7 @@ script.on_event(defines.events.on_tick,function(event)
 
                     local percentage = (struct.required_charge * 100.0 / firing_entity.prototype.electric_energy_source_prototype.buffer_capacity)
                     struct.entity.last_user.print(string.format("Performing test-firing %d/%d of the intergalactic transceiver with %.1f%% power.", struct.completed_activations + 1, settings.startup["kee-activations"].value, percentage))
+                    
                 else
                     -- This is the final activation, replace with the original, charging transceiver:
                     struct.entity.last_user.print(string.format("Performing final activation of the intergalactic transceiver with 100%% power!"))
@@ -232,6 +234,7 @@ script.on_event(defines.events.on_tick,function(event)
                     global.kee_intergalactic_transceivers[struct.entity.unit_number] = nil
                     struct.combinator.destroy()
                     struct.entity.destroy()
+                    transceiver_replaced = true
                     update_all_guis(false) -- Close all GUIs
                 end
             end
@@ -256,6 +259,7 @@ script.on_event(defines.events.on_tick,function(event)
                 -- Remove old entity:
                 global.kee_intergalactic_transceivers[struct.entity.unit_number] = nil
                 struct.entity.destroy()
+                transceiver_replaced = true
                 -- Store new entity in our struct:
                 struct.entity = loading_entity
                 struct.state = 'loading'
@@ -273,7 +277,11 @@ script.on_event(defines.events.on_tick,function(event)
             -- Some invalid state of entity (should not happen, remove it:
             game.print(string.format("removing invalid transceiver from tracking: %d", index))
             global.kee_intergalactic_transceivers[index] = nil
+            transceiver_replaced = true
         end
+
+        -- In case we modiefied one of the transceivers, it is safer to quite the for-loop:
+        if transceiver_replaced then break end
     end
 end)
 
