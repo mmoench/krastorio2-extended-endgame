@@ -134,6 +134,16 @@ local intergalactic_transceiver_working_sound =
 	fade_out_ticks = 30
 }
 
+-- Use the default gate oepn sound, just louder:
+local gate_open_sound = {}
+for _, sound in pairs(sounds.gate_open) do
+	table.insert(gate_open_sound, {filename=sound.filename, volume=1})
+end
+local gate_close_sound = {}
+for _, sound in pairs(sounds.gate_close) do
+	table.insert(gate_close_sound, {filename=sound.filename, volume=1})
+end
+
 local blank_image = {
   filename = "__krastorio2_extended_endgame__/graphics/blank.png",
   width = 1,
@@ -215,8 +225,8 @@ data:extend(
     name = "kee-intergalactic-transceiver-loading",
     order = "a",
     inventory_size = 80,
-    open_sound = { filename = "__base__/sound/gate-open-5.ogg", volume=1.0 },
-    close_sound = { filename = "__base__/sound/gate-close-1.ogg", volume = 1.0 },
+    open_sound = gate_open_sound,
+    close_sound = gate_close_sound,
 
     icon = "__Krastorio2__/graphics/icons/entities/intergalactic-transceiver.png",
     icon_size = 64,
