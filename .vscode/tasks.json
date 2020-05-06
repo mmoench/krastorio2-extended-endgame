@@ -5,7 +5,7 @@
             "label": "echo",
             "type": "shell",
             "command": [
-                "rm C:/Users/MM/AppData/Roaming/Factorio/mods/krastorio2_extended_endgame*.zip ; cd .. ; Compress-Archive -path krastorio2_extended_endgame_0.1.4 -Update -DestinationPath C:/Users/MM/AppData/Roaming/Factorio/mods/krastorio2_extended_endgame_0.1.4.zip ; G:/Steam/SteamApps/common/Factorio/bin/x64/factorio.exe"
+                "rm C:/Users/MM/AppData/Roaming/Factorio/mods/krastorio2_extended_endgame*.zip ; cd .. ; Compress-Archive -path krastorio2_extended_endgame_0.1.5 -Update -DestinationPath C:/Users/MM/AppData/Roaming/Factorio/mods/krastorio2_extended_endgame_0.1.5.zip ; G:/Steam/SteamApps/common/Factorio/bin/x64/factorio.exe"
             ],
             "group": {
                 "kind": "build",

@@ -227,16 +227,19 @@ script.on_event(defines.events.on_tick,function(event)
                         create_build_effect_smoke = false,
                         raise_built = true -- This should trigger the krastorio2 internal initialization of the building
                     }
-                    -- Duplicate all network connections for the replacement entity:
-                    copy_network_wires(struct.entity, final_entity)
 
-                    -- Remove all our entities and stored data, it's now out of our hands:
                     global.kee_intergalactic_transceivers[struct.entity.unit_number] = nil
-                    struct.combinator.destroy()
-                    struct.entity.destroy()
+                    if final_entity == nil then
+                        -- We were unable to create a new transceiver, this can happen if for example the player has already a working kr-transceiver:
+                        struct.entity.last_user.print("[color=red]Final activation of the intergalactic transceiver failed![/color] (maybe we already have one?)")
+                    else
+                        -- Remove all our entities and stored data, it's now out of our hands:
+                        struct.combinator.destroy()
+                        struct.entity.destroy()
+                    end
                     transceiver_replaced = true
                     update_all_guis(false) -- Close all GUIs
-                end
+            end
             end
 
         elseif struct.entity and struct.entity.valid and struct.state == 'firing' then
