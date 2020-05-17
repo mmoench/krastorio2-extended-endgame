@@ -79,16 +79,9 @@ end
 
 -- Copies all network connections (red & green wires) from one entity to another:
 function copy_network_wires(source_entity, target_entity)
-    if source_entity.circuit_connected_entities then
-        if source_entity.circuit_connected_entities['red'] then
-            for _, connected_entity in pairs(source_entity.circuit_connected_entities['red']) do
-                target_entity.connect_neighbour({wire = defines.wire_type.red, target_entity = connected_entity})
-            end
-        end
-        if source_entity.circuit_connected_entities['green'] then
-            for _, connected_entity in pairs(source_entity.circuit_connected_entities['green']) do
-                target_entity.connect_neighbour({wire = defines.wire_type.green, target_entity = connected_entity})
-            end
+    if source_entity.circuit_connection_definitions then
+        for _, connection_definition in pairs(source_entity.circuit_connection_definitions) do
+            target_entity.connect_neighbour(connection_definition)
         end
     end
 end
@@ -227,19 +220,16 @@ script.on_event(defines.events.on_tick,function(event)
                         create_build_effect_smoke = false,
                         raise_built = true -- This should trigger the krastorio2 internal initialization of the building
                     }
+                    -- Duplicate all network connections for the replacement entity:
+                    copy_network_wires(struct.entity, final_entity)
 
+                    -- Remove all our entities and stored data, it's now out of our hands:
                     global.kee_intergalactic_transceivers[struct.entity.unit_number] = nil
-                    if final_entity == nil then
-                        -- We were unable to create a new transceiver, this can happen if for example the player has already a working kr-transceiver:
-                        struct.entity.last_user.print("[color=red]Final activation of the intergalactic transceiver failed![/color] (maybe we already have one?)")
-                    else
-                        -- Remove all our entities and stored data, it's now out of our hands:
-                        struct.combinator.destroy()
-                        struct.entity.destroy()
-                    end
+                    struct.combinator.destroy()
+                    struct.entity.destroy()
                     transceiver_replaced = true
                     update_all_guis(false) -- Close all GUIs
-            end
+                end
             end
 
         elseif struct.entity and struct.entity.valid and struct.state == 'firing' then
