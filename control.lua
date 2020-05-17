@@ -79,16 +79,9 @@ end
 
 -- Copies all network connections (red & green wires) from one entity to another:
 function copy_network_wires(source_entity, target_entity)
-    if source_entity.circuit_connected_entities then
-        if source_entity.circuit_connected_entities['red'] then
-            for _, connected_entity in pairs(source_entity.circuit_connected_entities['red']) do
-                target_entity.connect_neighbour({wire = defines.wire_type.red, target_entity = connected_entity})
-            end
-        end
-        if source_entity.circuit_connected_entities['green'] then
-            for _, connected_entity in pairs(source_entity.circuit_connected_entities['green']) do
-                target_entity.connect_neighbour({wire = defines.wire_type.green, target_entity = connected_entity})
-            end
+    if source_entity.circuit_connection_definitions then
+        for _, connection_definition in pairs(source_entity.circuit_connection_definitions) do
+            target_entity.connect_neighbour(connection_definition)
         end
     end
 end
