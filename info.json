@@ -1,13 +1,13 @@
 {
   "name": "krastorio2_extended_endgame",
-  "version": "0.1.5",
-  "factorio_version": "0.18",
+  "version": "1.0.0",
+  "factorio_version": "1.1",
   "title": "Krastorio2 Extended Endgame",
   "description": "Extends the last phase of the game by requiring you to invest a large amount of research and energy before you can create a stable singularity with Krastorio2's intergalactic transceiver.",
   "author": "Michael Mönch",
   "homepage": "https://github.com/mmoench/krastorio2-extended-endgame",
   "dependencies": [
-    "base >= 0.18.22",
-	  "Krastorio2 >= 0.9.16"
+    "base >= 1.1.2",
+    "Krastorio2 >= 1.0.10"
   ]
 }
