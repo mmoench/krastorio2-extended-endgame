@@ -26,7 +26,7 @@ data:extend(
 	{
 		type = "item",
 		name = "kee-intergalactic-transceiver-loading",
-		icon = "__Krastorio2__/graphics/icons/entities/intergalactic-transceiver.png",
+		icon = "__Krastorio2Assets__/icons/entities/intergalactic-transceiver.png",
 		icon_size = 64,
 		subgroup = "radars-and-rockets",
 		order = "zzz[rocket-silo]-zzzz[intergalactic-transceiver]",
@@ -40,7 +40,7 @@ local intergalactic_transceiver_animation =
 	layers =
 	{
 		{
-			filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/intergalactic-transceiver.png",
+			filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver.png",
 			width = 400,
 			height = 400,
 			frame_count = 1,
@@ -49,7 +49,7 @@ local intergalactic_transceiver_animation =
 			animation_speed = 0.3447,
 			hr_version =
 			{
-				filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/hr-intergalactic-transceiver.png",
+				filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver.png",
 				width = 800,
 				height = 800,
 				scale = 0.5,
@@ -60,7 +60,7 @@ local intergalactic_transceiver_animation =
 			}
 		},
 		{
-			filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/intergalactic-transceiver-sh.png",
+			filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver-sh.png",
 			width = 434,
 			height = 313,
 			frame_count = 1,
@@ -70,7 +70,7 @@ local intergalactic_transceiver_animation =
 			shift = {0.52, 0.5},
 			hr_version =
 			{
-				filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/hr-intergalactic-transceiver-sh.png",
+				filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver-sh.png",
 				width = 867,
 				height = 626,
 				scale = 0.5,
@@ -82,7 +82,7 @@ local intergalactic_transceiver_animation =
 			}
 		},
 		{
-			filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/intergalactic-transceiver-charge.png",
+			filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver-charge.png",
 			width = 400,
 			height = 400,
 			frame_count = 60,
@@ -91,7 +91,7 @@ local intergalactic_transceiver_animation =
 			shift = {0, -0.8},
 			hr_version =
 			{
-				filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/hr-intergalactic-transceiver-charge.png",
+				filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver-charge.png",
 				width = 800,
 				height = 800,
 				scale = 0.5,
@@ -111,22 +111,22 @@ local intergalactic_transceiver_working_sound =
 		variations =
 		{
 			{
-				filename = "__Krastorio2__/sounds/buildings/intergalactic-transceiver-charge.ogg",
+				filename = "__Krastorio2Assets__/sounds/buildings/intergalactic-transceiver-charge.ogg",
 				volume = 1.5
 			},
 			{
-				filename = "__Krastorio2__/sounds/buildings/intergalactic-transceiver-charge.ogg",
+				filename = "__Krastorio2Assets__/sounds/buildings/intergalactic-transceiver-charge.ogg",
 				volume = 1.5
 			},
 			{
-				filename = "__Krastorio2__/sounds/buildings/intergalactic-transceiver-charge-morse.ogg",
+				filename = "__Krastorio2Assets__/sounds/buildings/intergalactic-transceiver-charge-morse.ogg",
 				volume = 1.5
 			}
 		}
 	},
 	idle_sound =
 	{
-		filename = "__Krastorio2__/sounds/buildings/intergalactic-transceiver.ogg",
+		filename = "__Krastorio2Assets__/sounds/buildings/intergalactic-transceiver.ogg",
 		volume = 1
 	},
 	max_sounds_per_type = 3,
@@ -159,7 +159,7 @@ data:extend(
   {
     type = "constant-combinator",
     name = "kee-intergalactic-transceiver-combinator",
-    icon = "__Krastorio2__/graphics/icons/entities/intergalactic-transceiver.png",
+    icon = "__Krastorio2Assets__/icons/entities/intergalactic-transceiver.png",
     icon_size = 64,
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-deconstructable", "not-blueprintable"},
     order = "y",
@@ -228,7 +228,7 @@ data:extend(
     open_sound = gate_open_sound,
     close_sound = gate_close_sound,
 
-    icon = "__Krastorio2__/graphics/icons/entities/intergalactic-transceiver.png",
+    icon = "__Krastorio2Assets__/icons/entities/intergalactic-transceiver.png",
     icon_size = 64,
     flags = {"placeable-neutral","placeable-player", "player-creation", "not-rotatable"},
     map_color = {r=0.37, g=0.18, b=0.47},
@@ -251,14 +251,14 @@ data:extend(
       layers=
       {
         {
-          filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/intergalactic-transceiver.png",
+          filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver.png",
           width = 400,
           height = 400,
           frame_count = 1,
           shift = {0, -0.8},
           hr_version =
           {
-            filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/hr-intergalactic-transceiver.png",
+            filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver.png",
             width = 800,
             height = 800,
             scale = 0.5,
@@ -267,7 +267,7 @@ data:extend(
           }
         },
         {
-          filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/intergalactic-transceiver-sh.png",
+          filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver-sh.png",
           width = 434,
           height = 313,
           frame_count = 1,
@@ -275,7 +275,7 @@ data:extend(
           shift = {0.52, 0.5},
           hr_version =
           {
-            filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/hr-intergalactic-transceiver-sh.png",
+            filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver-sh.png",
             width = 867,
             height = 626,
             scale = 0.5,
@@ -309,7 +309,7 @@ data:extend(
 		type = "accumulator",
 		name = "kee-intergalactic-transceiver-test-fire",
 		order = "b",
-		icon = "__Krastorio2__/graphics/icons/entities/intergalactic-transceiver.png",
+		icon = "__Krastorio2Assets__/icons/entities/intergalactic-transceiver.png",
 		icon_size = 64,
 		flags = {"placeable-neutral","placeable-player", "player-creation", "not-rotatable"},
 		map_color = {r=0.37, g=0.18, b=0.47},
@@ -340,14 +340,14 @@ data:extend(
 			layers=
 			{
 				{
-					filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/intergalactic-transceiver.png",
+					filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver.png",
 					width = 400,
 					height = 400,
 					frame_count = 1,
 					shift = {0, -0.8},
 					hr_version =
 					{
-						filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/hr-intergalactic-transceiver.png",
+						filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver.png",
 						width = 800,
 						height = 800,
 						scale = 0.5,
@@ -356,7 +356,7 @@ data:extend(
 					}
 				},
 				{
-					filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/intergalactic-transceiver-sh.png",
+					filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver-sh.png",
 					width = 434,
 					height = 313,
 					frame_count = 1,
@@ -364,7 +364,7 @@ data:extend(
 					shift = {0.52, 0.5},
 					hr_version =
 					{
-						filename = "__Krastorio2__/graphics/entities/intergalactic-transceiver/hr-intergalactic-transceiver-sh.png",
+						filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver-sh.png",
 						width = 867,
 						height = 626,
 						scale = 0.5,
