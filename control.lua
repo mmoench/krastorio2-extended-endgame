@@ -135,6 +135,7 @@ script.on_event(defines.events.on_tick,function(event)
                 if take > 0 then
                     main_inv.remove({name="matter-tech-card", count=take})
                     struct.current_matter_tech_cards = struct.current_matter_tech_cards + take
+					game["forces"]["player"]["item_production_statistics"].on_flow("matter-tech-card", -1 * take)
                     contents_changed = true
                 end
             end
@@ -143,6 +144,7 @@ script.on_event(defines.events.on_tick,function(event)
                 if take > 0 then
                     main_inv.remove({name="advanced-tech-card", count=take})
                     struct.current_advanced_tech_cards = struct.current_advanced_tech_cards + take
+					game["forces"]["player"]["item_production_statistics"].on_flow("advanced-tech-card", -1 * take)
                     contents_changed = true
                 end
             end
@@ -151,6 +153,7 @@ script.on_event(defines.events.on_tick,function(event)
                 if take > 0 then
                     main_inv.remove({name="singularity-tech-card", count=take})
                     struct.current_singularity_tech_cards = struct.current_singularity_tech_cards + take
+					game["forces"]["player"]["item_production_statistics"].on_flow("singularity-tech-card", -1 * take)
                     contents_changed = true
                 end
             end
@@ -159,6 +162,7 @@ script.on_event(defines.events.on_tick,function(event)
                 if take > 0 then
                     main_inv.remove({name="space-research-data", count=take})
                     struct.current_space_research_data = struct.current_space_research_data + take
+					game["forces"]["player"]["item_production_statistics"].on_flow("space-research-data", -1 * take)
                     contents_changed = true
                 end
             end

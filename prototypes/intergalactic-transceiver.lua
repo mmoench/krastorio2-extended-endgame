@@ -35,74 +35,238 @@ data:extend(
 	}
 })
 
-local intergalactic_transceiver_animation = 
-{
-	layers =
-	{
-		{
-			filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver.png",
-			width = 400,
-			height = 400,
-			frame_count = 1,
-			repeat_count = 60,
-			shift = {0, -0.8},
-			animation_speed = 0.3447,
-			hr_version =
-			{
-				filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver.png",
-				width = 800,
-				height = 800,
-				scale = 0.5,
-				frame_count = 1,
-				repeat_count = 60,
-				animation_speed=0.3447,
-				shift = {0, -0.8}
-			}
-		},
-		{
-			filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver-sh.png",
-			width = 434,
-			height = 313,
-			frame_count = 1,
-			repeat_count = 60,
-			draw_as_shadow = true,
-			animation_speed = 0.3447,
-			shift = {0.52, 0.5},
-			hr_version =
-			{
-				filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver-sh.png",
-				width = 867,
-				height = 626,
-				scale = 0.5,
-				frame_count = 1,
-				repeat_count = 60,
-				draw_as_shadow = true,
-				animation_speed=0.3447,
-				shift = {0.52, 0.5}
-			}
-		},
-		{
-			filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/intergalactic-transceiver-charge.png",
-			width = 400,
-			height = 400,
-			frame_count = 60,
-			line_length = 10,
-			animation_speed = 0.3447,
-			shift = {0, -0.8},
-			hr_version =
-			{
-				filename = "__Krastorio2Assets__/entities/intergalactic-transceiver/hr-intergalactic-transceiver-charge.png",
-				width = 800,
-				height = 800,
-				scale = 0.5,
-				frame_count = 60,
-				line_length = 10,
-				animation_speed = 0.3447,
-				shift = {0, -0.8}
-			}
-		}
-	}
+local intergalactic_transceiver_animation = {
+  layers = {
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver.png",
+      width = 400,
+      height = 400,
+      frame_count = 1,
+      repeat_count = 60,
+      shift = { 0, -0.8 },
+      animation_speed = 0.3447,
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver.png",
+        width = 800,
+        height = 800,
+        scale = 0.5,
+        frame_count = 1,
+        repeat_count = 60,
+        animation_speed = 0.3447,
+        shift = { 0, -0.8 },
+      },
+    },
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver-sh.png",
+      priority = "low",
+      width = 434,
+      height = 313,
+      frame_count = 1,
+      repeat_count = 60,
+      draw_as_shadow = true,
+      animation_speed = 0.3447,
+      shift = { 0.52, 0.5 },
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver-sh.png",
+        priority = "low",
+        width = 867,
+        height = 626,
+        scale = 0.5,
+        frame_count = 1,
+        repeat_count = 60,
+        draw_as_shadow = true,
+        animation_speed = 0.3447,
+        shift = { 0.52, 0.5 },
+      },
+    },
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver-charging.png",
+      priority = "high",
+      width = 400,
+      height = 400,
+      frame_count = 60,
+      line_length = 10,
+      animation_speed = 0.3447,
+      shift = { 0, -0.8 },
+      draw_as_glow = true,
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver-charging.png",
+        priority = "high",
+        width = 800,
+        height = 800,
+        scale = 0.5,
+        frame_count = 60,
+        line_length = 10,
+        animation_speed = 0.3447,
+        shift = { 0, -0.8 },
+        draw_as_glow = true,
+      },
+    },
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver-light.png",
+      priority = "high",
+      width = 400,
+      height = 400,
+      frame_count = 1,
+      repeat_count = 60,
+      shift = { 0, -0.8 },
+      draw_as_light = true,
+      animation_speed = 0.3447,
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver-light.png",
+        priority = "high",
+        width = 800,
+        height = 800,
+        scale = 0.5,
+        frame_count = 1,
+        repeat_count = 60,
+        animation_speed = 0.3447,
+        shift = { 0, -0.8 },
+        draw_as_light = true,
+      },
+    },
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver-charging-light.png",
+      priority = "high",
+      width = 400,
+      height = 400,
+      frame_count = 60,
+      line_length = 10,
+      animation_speed = 0.3447,
+      shift = { 0, -0.8 },
+      draw_as_light = true,
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver-charging-light.png",
+        priority = "high",
+        width = 800,
+        height = 800,
+        scale = 0.5,
+        frame_count = 60,
+        line_length = 10,
+        animation_speed = 0.3447,
+        shift = { 0, -0.8 },
+        draw_as_light = true,
+      },
+    },
+  },
 }
+
+local activated_intergalactic_transceiver_animation = {
+  layers = {
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver.png",
+      width = 400,
+      height = 400,
+      frame_count = 1,
+      repeat_count = 60,
+      shift = { 0, -0.8 },
+      animation_speed = 0.3447,
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver.png",
+        width = 800,
+        height = 800,
+        scale = 0.5,
+        frame_count = 1,
+        repeat_count = 60,
+        animation_speed = 0.3447,
+        shift = { 0, -0.8 },
+      },
+    },
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver-sh.png",
+      priority = "low",
+      width = 434,
+      height = 313,
+      frame_count = 1,
+      repeat_count = 60,
+      draw_as_shadow = true,
+      animation_speed = 0.3447,
+      shift = { 0.52, 0.5 },
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver-sh.png",
+        priority = "low",
+        width = 867,
+        height = 626,
+        scale = 0.5,
+        frame_count = 1,
+        repeat_count = 60,
+        draw_as_shadow = true,
+        animation_speed = 0.3447,
+        shift = { 0.52, 0.5 },
+      },
+    },
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver-charge.png",
+      priority = "high",
+      width = 400,
+      height = 400,
+      frame_count = 60,
+      line_length = 10,
+      animation_speed = 0.3447,
+      shift = { 0, -0.8 },
+      draw_as_glow = true,
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver-charge.png",
+        priority = "high",
+        width = 800,
+        height = 800,
+        scale = 0.5,
+        frame_count = 60,
+        line_length = 10,
+        animation_speed = 0.3447,
+        shift = { 0, -0.8 },
+        draw_as_glow = true,
+      },
+    },
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver-light.png",
+      priority = "high",
+      width = 400,
+      height = 400,
+      frame_count = 1,
+      repeat_count = 60,
+      shift = { 0, -0.8 },
+      draw_as_light = true,
+      animation_speed = 0.3447,
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver-light.png",
+        priority = "high",
+        width = 800,
+        height = 800,
+        scale = 0.5,
+        frame_count = 1,
+        repeat_count = 60,
+        animation_speed = 0.3447,
+        shift = { 0, -0.8 },
+        draw_as_light = true,
+      },
+    },
+    {
+      filename = kr_entities_path .. "intergalactic-transceiver/intergalactic-transceiver-charge-light.png",
+      priority = "high",
+      width = 400,
+      height = 400,
+      frame_count = 60,
+      line_length = 10,
+      animation_speed = 0.3447,
+      shift = { 0, -0.8 },
+      draw_as_light = true,
+      hr_version = {
+        filename = kr_entities_path .. "intergalactic-transceiver/hr-intergalactic-transceiver-charge-light.png",
+        priority = "high",
+        width = 800,
+        height = 800,
+        scale = 0.5,
+        frame_count = 60,
+        line_length = 10,
+        animation_speed = 0.3447,
+        shift = { 0, -0.8 },
+        draw_as_light = true,
+      },
+    },
+  },
+}
+
 
 local intergalactic_transceiver_working_sound =
 {
@@ -112,15 +276,15 @@ local intergalactic_transceiver_working_sound =
 		{
 			{
 				filename = "__Krastorio2Assets__/sounds/buildings/intergalactic-transceiver-charge.ogg",
-				volume = 1.5
+				volume = 1.2
 			},
 			{
 				filename = "__Krastorio2Assets__/sounds/buildings/intergalactic-transceiver-charge.ogg",
-				volume = 1.5
+				volume = 1.2
 			},
 			{
 				filename = "__Krastorio2Assets__/sounds/buildings/intergalactic-transceiver-charge-morse.ogg",
-				volume = 1.5
+				volume = 1.2
 			}
 		}
 	},
