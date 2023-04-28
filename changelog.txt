@@ -3,7 +3,7 @@ Version: 1.0.3
 Date: 2022-10-29
   Updates:
     - Fixed tech card's not showing in consumption statistics
-	  - Fixed unknown key in locale
+    - Fixed unknown key in locale
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2022-08-25
