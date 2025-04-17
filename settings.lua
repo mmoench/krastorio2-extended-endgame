@@ -5,7 +5,6 @@ data:extend({
 		setting_type = "startup",
 		default_value = 10,
 		order = "a",
-        per_user = false,
         allowed_values = {5,10,25}
     },
 	{
@@ -14,7 +13,6 @@ data:extend({
 		setting_type = "startup",
 		default_value = 250,
 		order = "a",
-        per_user = false,
         allowed_values = {100,250,500,1000,2000}
 	},
 	{
@@ -23,7 +21,6 @@ data:extend({
 		setting_type = "startup",
 		default_value = 1000,
 		order = "a",
-        per_user = false,
         allowed_values = {100,250,500,1000,2000}
 	},
 	{
@@ -32,7 +29,6 @@ data:extend({
 		setting_type = "startup",
 		default_value = 1000,
 		order = "a",
-        per_user = false,
         allowed_values = {100,250,500,1000,2000}
 	},
 	{
@@ -41,7 +37,6 @@ data:extend({
 		setting_type = "startup",
 		default_value = 1000,
 		order = "a",
-        per_user = false,
         allowed_values = {100,250,500,1000,2000}
 	},
 })
