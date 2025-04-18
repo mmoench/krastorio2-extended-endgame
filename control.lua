@@ -88,27 +88,21 @@ function create_combinator(struct)
     defines.wire_origin.script
   )
 
-  -- struct.entity.connect_neighbour({wire = defines.wire_type.red, target_entity = struct.combinator})
-  -- struct.entity.connect_neighbour({wire = defines.wire_type.green, target_entity = struct.combinator})
   struct.combinator.destructible = false
 end
 
 -- Copies all network connections (red & green wires) from one entity to another:
---TODO: change for 2.0 see above
 function copy_network_wires(source_entity, target_entity)
   for id, source_conn in pairs(source_entity.get_wire_connectors()) do
-    local target_conn = target_entity.get_wire_connector(id,true)
-    target_conn.connect_to(
-      source_conn,
-      false,
-      defines.wire_origin.script
-    )
+    local target_conn = target_entity.get_wire_connector(id, true)
+    for _, wire_conn in pairs(source_conn.connections) do
+      target_conn.connect_to(
+        wire_conn.target,
+        false,
+        wire_conn.origin
+      )
+    end
   end
-  -- if source_entity.circuit_connection_definitions then
-    -- for _, connection_definition in pairs(source_entity.circuit_connection_definitions) do
-      -- target_entity.connect_neighbour(connection_definition)
-    -- end
-  -- end
 end
 
 function calculate_resource_needs(initial_need, completed_activations)

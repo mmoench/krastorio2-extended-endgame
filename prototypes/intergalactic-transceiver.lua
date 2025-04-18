@@ -1,7 +1,7 @@
-local hit_effects = require("__base__/prototypes/entity/hit-effects")
-local sounds      = require("__base__/prototypes/entity/sounds")
+local hit_effects   = require("__base__/prototypes/entity/hit-effects")
+local sounds        = require("__base__/prototypes/entity/sounds")
 
-local picture = {
+local picture       = {
   layers = {
     {
       filename = "__Krastorio2Assets__/buildings/intergalactic-transceiver/intergalactic-transceiver-light.png",
@@ -32,7 +32,7 @@ local picture = {
   },
 }
 
-local animation = {
+local animation     = {
   layers = {
     {
       filename = "__Krastorio2Assets__/buildings/intergalactic-transceiver/intergalactic-transceiver.png",
@@ -131,12 +131,12 @@ data:extend(
       enabled = false,
       ingredients =
       {
-        { type = "item", name = "kr-imersium-beam",   amount = 500 },
-        { type = "item", name = "kr-imersium-plate",  amount = 500 },
-        { type = "item", name = "kr-rare-metals",     amount = 1000 },
+        { type = "item", name = "kr-imersium-beam",       amount = 500 },
+        { type = "item", name = "kr-imersium-plate",      amount = 500 },
+        { type = "item", name = "kr-rare-metals",         amount = 1000 },
         { type = "item", name = "kr-energy-control-unit", amount = 500 },
-        { type = "item", name = "kr-ai-core",         amount = 300 },
-        { type = "item", name = "concrete",           amount = 750 }
+        { type = "item", name = "kr-ai-core",             amount = 300 },
+        { type = "item", name = "concrete",               amount = 750 }
       },
       results = { { type = "item", name = "kee-intergalactic-transceiver-loading", amount = 1 } }
     }
@@ -193,7 +193,7 @@ data:extend(
       -- collision_mask = { "not-colliding-with-itself" },
       selection_box = { { -0.5, -0.5 }, { 0.5, 0.5 } },
       -- scale_info_icons = false,
-      selectable_in_game = true,
+      selectable_in_game = false,
       -- item_slot_count = 10,
       sprites =
       {
@@ -239,7 +239,7 @@ data:extend(
           wire = { red = { 0, 0 }, green = { 0, 0 }, }
         }
       },
-      circuit_connector_sprites = nil,
+      -- circuit_connector_sprites = nil,
       circuit_wire_max_distance = 10
     },
     -- Loading stage before test-fire:
@@ -275,38 +275,40 @@ data:extend(
         {
           {
             filename = "__Krastorio2Assets__/buildings/intergalactic-transceiver/intergalactic-transceiver.png",
-              width = 800,
-              height = 800,
-              scale = 0.5,
-              frame_count = 1,
-              shift = { 0, -0.8 }
+            width = 800,
+            height = 800,
+            scale = 0.5,
+            frame_count = 1,
+            shift = { 0, -0.8 }
           },
           {
             filename = "__Krastorio2Assets__/buildings/intergalactic-transceiver/intergalactic-transceiver-sh.png",
-              width = 867,
-              height = 626,
-              scale = 0.5,
-              frame_count = 1,
-              draw_as_shadow = true,
-              shift = { 0.52, 0.5 }
+            width = 867,
+            height = 626,
+            scale = 0.5,
+            frame_count = 1,
+            draw_as_shadow = true,
+            shift = { 0.52, 0.5 }
           }
 
         }
       },
       vehicle_impact_sound = sounds.generic_impact,
-      circuit_wire_connection_point = {
-        shadow =
-        {
-          red = { 4.3, 2.45 },
-          green = { 4.3, 2.45 },
+      circuit_connector = {
+        spirtes = nil,
+        points = {
+          shadow =
+          {
+            red = { 4.3, 2.45 },
+            green = { 4.3, 2.45 },
+          },
+          wire =
+          {
+            red = { 4.3, 2.45 },
+            green = { 4.3, 2.45 },
+          }
         },
-        wire =
-        {
-          red = { 4.3, 2.45 },
-          green = { 4.3, 2.45 },
-        }
       },
-      circuit_connector_sprites = nil,
       circuit_wire_max_distance = default_circuit_wire_max_distance,
       default_output_signal = { type = "virtual", name = "signal-I" }
     },
@@ -319,8 +321,7 @@ data:extend(
       icon_size = 64,
       flags = { "placeable-neutral", "placeable-player", "player-creation", "not-rotatable" },
       map_color = { r = 0.37, g = 0.18, b = 0.47 },
-      minable = { mining_time = 10, result = "kr-intergalactic-transceiver" },
-      placeable_by = { item = "kr-intergalactic-transceiver", count = 1 },
+      minable = { mining_time = 10, result = "kee-intergalactic-transceiver-loading" },
       collision_box = { { -5.75, -5.25 }, { 5.75, 5.25 } },
       selection_box = { { -6, -5.5 }, { 6, 5.5 } },
       drawing_box = { { -6, -6.5 }, { 6, 4.5 } },
@@ -330,8 +331,8 @@ data:extend(
       damaged_trigger_effect = hit_effects.entity(),
       resistances = {
         { type = "physical", percent = 75 },
-        { type = "fire", percent = 75 },
-        { type = "impact", percent = 75 },
+        { type = "fire",     percent = 75 },
+        { type = "impact",   percent = 75 },
       },
       energy_source = {
         type = "electric",
@@ -358,22 +359,21 @@ data:extend(
         discharge_animation = animation,
         discharge_cooldown = 240,
       },
-  
-      circuit_wire_connection_point = {
-        shadow =
-        {
-          red = { 4.3, 2.45 },
-          green = { 4.3, 2.45 },
+      circuit_connector = {
+        spirtes = nil,
+        points = {
+          shadow =
+          {
+            red = { 4.3, 2.45 },
+            green = { 4.3, 2.45 },
+          },
+          wire =
+          {
+            red = { 4.3, 2.45 },
+            green = { 4.3, 2.45 },
+          }
         },
-        wire =
-        {
-          red = { 4.3, 2.45 },
-          green = { 4.3, 2.45 },
-        }
       },
-      circuit_connector_sprites = nil,
       circuit_wire_max_distance = default_circuit_wire_max_distance,
-
-      -- default_output_signal = { type = "virtual", name = "signal-I" }
     }
   })
