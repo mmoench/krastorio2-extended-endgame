@@ -221,6 +221,7 @@ script.on_event(defines.events.on_tick, function(event)
                         type                      = "accumulator",
                         name                      = "kee-intergalactic-transceiver-test-fire",
                         force                     = struct.entity.force,
+                        quality                   = struct.entity.quality,
                         player                    = struct.entity.last_user,
                         position                  = struct.entity.position,
                         create_build_effect_smoke = false
@@ -258,6 +259,7 @@ script.on_event(defines.events.on_tick, function(event)
                         type                      = "accumulator",
                         name                      = "kr-intergalactic-transceiver",
                         force                     = struct.entity.force,
+                        quality                   = struct.entity.quality,
                         player                    = struct.entity.last_user,
                         position                  = struct.entity.position,
                         create_build_effect_smoke = false,
@@ -285,6 +287,7 @@ script.on_event(defines.events.on_tick, function(event)
                     type                      = "container",
                     name                      = "kee-intergalactic-transceiver-loading",
                     force                     = struct.entity.force,
+                    quality                   = struct.entity.quality,
                     player                    = struct.entity.last_user,
                     position                  = struct.entity.position,
                     create_build_effect_smoke = false
